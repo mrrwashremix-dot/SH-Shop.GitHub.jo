@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="km">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SH Market | Marketplace</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">SH <span>Market</span></a>
+    <nav><a href="#products">ទំនិញ</a><a href="#sell">ដាក់លក់</a><a href="#how">របៀបប្រើ</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">MARKETPLACE • KHMER SELLERS</p>
+        <h1>កន្លែងតែមួយ<br>សម្រាប់ទិញ និងលក់ទំនិញ</h1>
+        <p class="sub">អ្នកលក់អាចដាក់ទំនិញបាន។ អ្នកគ្រប់គ្រងទទួលបានកម្រៃជើងសារពីការលក់ដែលបានកត់ត្រា។</p>
+        <a class="primary" href="#products">មើលទំនិញ</a>
+      </div>
+      <div class="hero-card"><div class="big-icon">🛍️</div><h3>ទិញងាយ • លក់ងាយ</h3><p>ទំនិញពីអ្នកលក់ច្រើននាក់</p><div class="mini-tags"><span>សម្លៀកបំពាក់</span><span>គ្រឿងអេឡិចត្រូនិក</span><span>ផ្សេងៗ</span></div></div>
+    </section>
+    <section class="section" id="products">
+      <div class="section-heading"><div><p class="eyebrow">SHOP THE MARKET</p><h2>ទំនិញថ្មីៗ</h2></div><span id="commissionBadge" class="pill">ជើងសារ —</span></div>
+      <div id="productGrid" class="product-grid"><p>កំពុងទាញយកទំនិញ...</p></div>
+    </section>
+    <section class="section chat-intro" id="buyerSellerChat">
+      <p class="eyebrow">BUYER ↔ SELLER CHAT</p>
+      <h2>ជជែកផ្ទាល់ជាមួយអ្នកលក់</h2>
+      <p>បង្កើតគណនី ឬចូលគណនី រួចចាប់ផ្ដើមជជែកជាមួយអ្នកប្រើតាមឈ្មោះគណនី។ អ្នកអាចផ្ញើអត្ថបទ និងរូបភាព QR ទូទាត់ប្រាក់បាន។</p>
+      <div class="privacy-points">
+        <span>🔒 សារ និងរូបភាពឯកជន</span><span>🖼️ រូបភាព JPG, PNG, WEBP, GIF</span><span>🛡️ ទំហំអតិបរមា 5MB</span>
+      </div>
+      <div class="chat-app">
+        <div class="chat-auth panel" id="chatAuthPanel">
+          <h3>គណនីសម្រាប់ជជែក</h3>
+          <form id="chatAuthForm">
+            <label>ឈ្មោះគណនី<input name="username" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_]+" placeholder="ឧ. seller_shop"></label>
+            <label>ពាក្យសម្ងាត់<input name="password" type="password" required minlength="10" maxlength="200" placeholder="យ៉ាងតិច 10 តួអក្សរ"></label>
+            <div class="chat-auth-actions"><button class="primary" type="submit" name="mode" value="login">ចូលគណនី</button><button type="button" id="chatRegisterBtn">បង្កើតគណនី</button></div>
+          </form>
+          <p class="form-note">គណនីនេះប្រើសម្រាប់មុខងារជជែកក្នុងគម្រោងនេះ។ កុំប្រើពាក្យសម្ងាត់ដែលអ្នកប្រើនៅគណនីសំខាន់ផ្សេងទៀត។</p>
+        </div>
+        <div id="chatWorkspace" hidden>
+          <div class="chat-account-bar"><span id="chatLoggedInAs"></span><button type="button" id="chatLogoutBtn">ចាកចេញ</button></div>
+          <form id="newChatForm" class="new-chat-form"><label>ចាប់ផ្ដើមជជែកជាមួយឈ្មោះគណនី<input name="username" required minlength="3" placeholder="ឈ្មោះគណនីអ្នកលក់/អ្នកទិញ"></label><button class="primary" type="submit">ចាប់ផ្ដើម</button></form>
+          <div class="chat-layout"><aside class="chat-list"><h3>ការជជែករបស់ខ្ញុំ</h3><div id="chatThreads"><p class="form-note">មិនទាន់មានការជជែកទេ។</p></div></aside>
+            <div class="chat-room"><div id="chatRoomTitle" class="chat-room-title">ជ្រើសរើសបន្ទប់ជជែក</div><div id="chatMessages" class="chat-messages" aria-live="polite"><p class="form-note">សារឯកជននឹងបង្ហាញនៅទីនេះ។</p></div>
+              <form id="chatMessageForm" class="chat-compose"><textarea name="text" maxlength="2000" placeholder="សរសេរសារ..." aria-label="សរសេរសារ"></textarea><div class="chat-compose-actions"><label class="image-pick">📷 ផ្ញើរូបភាព<input id="chatImageInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden></label><span id="chatImageName" class="form-note"></span><button class="primary" type="submit">ផ្ញើសារ</button></div><p class="form-note">កុំផ្ញើលេខសម្ងាត់ ឬព័ត៌មានសម្ងាត់។ ពិនិត្យឈ្មោះ និងចំនួនប្រាក់មុនទូទាត់ QR។</p></form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="orderTrackingPanel" class="panel order-tracking" hidden>
+        <h3>📦 ការកុម្ម៉ង់របស់ខ្ញុំ</h3><p class="form-note">អ្នកលក់អាចសម្គាល់ថាបានផ្ញើ។ អ្នកទិញបញ្ជាក់ការទទួល បន្ទាប់មកទើបអាចវាយតម្លៃបាន។</p><div id="myOrdersList"></div>
+      </section>
+      <section id="adminPanel" class="panel admin-panel" hidden>
+        <h3>🛡️ ផ្ទាំងគ្រប់គ្រង Admin</h3><p class="form-note">សម្រាប់ពិនិត្យទំនិញ របាយការណ៍ និងកត់ត្រាស្ថានភាពទូទាត់ដោយដៃប៉ុណ្ណោះ។ មិនមែនជាប្រព័ន្ធទទួលប្រាក់ពិតទេ។</p>
+        <h4>ទំនិញរង់ចាំការត្រួតពិនិត្យ</h4><div id="adminProductsList"></div>
+        <h4>ការកុម្ម៉ង់ និងទូទាត់</h4><div id="adminOrdersList"></div>
+        <h4>របាយការណ៍ពីអ្នកប្រើ</h4><div id="adminReportsList"></div>
+      </section>
+      <dialog id="chatImageDialog" class="chat-image-dialog"><button type="button" id="closeChatImage" class="close" aria-label="បិទ">×</button><img id="chatZoomImage" alt="រូបភាពក្នុងសារជជែក"></dialog>
+    </section>
+    <section class="seller-section" id="sell">
+      <div><p class="eyebrow">BECOME A SELLER</p><h2>ចង់ក្លាយជាអ្នកលក់?</h2><p>ត្រូវបង្កើតគណនី ឬចូលគណនីជាមុនសិន។ ឈ្មោះគណនីរបស់អ្នកនឹងបង្ហាញជាឈ្មោះអ្នកលក់។</p><p>សូមដាក់តម្លៃពិត ពិពណ៌នាស្ថានភាពទំនិញឱ្យច្បាស់ និងប្រើរូបភាពត្រឹមត្រូវ។</p><a href="#buyerSellerChat" class="primary">ទៅបង្កើត/ចូលគណនី</a></div>
+      <div>
+      <div id="sellerGate" class="panel"><h3>🔐 ត្រូវចូលគណនីជាមុនសិន</h3><p class="form-note">ទៅផ្នែក «ជជែកផ្ទាល់ជាមួយអ្នកលក់» ដើម្បីបង្កើតគណនី ឬចូលគណនី រួចត្រឡប់មកទីនេះ។</p></div>
+      <form id="productForm" class="panel" hidden>
+        <label>ឈ្មោះទំនិញ<input name="title" required placeholder="ឧ. កាបូបស្ពាយ"></label>
+        <label>ការពិពណ៌នា<textarea name="description" placeholder="ពណ៌នា​អំពីទំនិញ"></textarea></label>
+        <label>តម្លៃ (USD)<input name="price" type="number" min="0" step="0.01" required placeholder="10.00"></label>
+        <label>តំណរូបភាព (បើមាន)<input name="imageUrl" type="url" placeholder="https://..."></label>
+        <button class="primary" type="submit">បង្ហោះទំនិញ</button>
+        <p class="form-note">តម្លៃត្រូវបង្ហាញជាដុល្លារ USD។ ការដាក់លក់នេះមិនទាន់មានការទូទាត់ប្រាក់ពិត ឬការផ្ទៀងផ្ទាត់គុណភាពដោយ Admin ទេ។</p>
+      </form>
+      </div>
+    </section>
+    <section class="section how" id="how">
+      <p class="eyebrow">HOW IT WORKS</p><h2>របៀបដំណើរការ</h2>
+      <div class="steps"><article><b>01</b><h3>អ្នកលក់បង្ហោះ</h3><p>បន្ថែមទំនិញ តម្លៃ និងព័ត៌មានទំនាក់ទំនង។</p></article><article><b>02</b><h3>អតិថិជនកុម្ម៉ង់</h3><p>ការកុម្ម៉ង់ត្រូវបានរក្សាទុកក្នុង Database។</p></article><article><b>03</b><h3>គណនាជើងសារ</h3><p>ប្រព័ន្ធគណនាកម្រៃជើងសារ និងផ្ញើការជូនដំណឹង Telegram។</p></article></div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> SH Market · Marketplace Starter</footer>
+  <dialog id="reviewDialog">
+    <form id="reviewForm" class="panel">
+      <button type="button" class="close" id="closeReviewDialog" aria-label="បិទ">×</button>
+      <h2>វាយតម្លៃទំនិញ</h2><p id="reviewProductName"></p>
+      <input type="hidden" name="productId">
+      <label>ពិន្ទុ
+        <select name="rating" required><option value="5">★★★★★ — ល្អឥតខ្ចោះ</option><option value="4">★★★★☆ — ល្អ</option><option value="3">★★★☆☆ — មធ្យម</option><option value="2">★★☆☆☆ — មិនសូវល្អ</option><option value="1">★☆☆☆☆ — មិនល្អ</option></select>
+      </label>
+      <label>មតិយោបល់<textarea name="comment" maxlength="1000" placeholder="ពិពណ៌នាបទពិសោធន៍ពេលកុម្ម៉ង់..."></textarea></label>
+      <button class="primary" type="submit">ផ្ញើការវាយតម្លៃ</button>
+      <div id="reviewList" class="review-list"></div>
+      <p class="form-note">អាចវាយតម្លៃបានតែគណនីដែលបានកុម្ម៉ង់ទំនិញតាម SH Market។ ការវាយតម្លៃជួយសម្រេចចិត្ត ប៉ុន្តែមិនធានាគុណភាពទំនិញទាំងស្រុងទេ។</p>
+    </form>
+  </dialog>
+  <dialog id="orderDialog">
+    <form id="orderForm" class="panel">
+      <button type="button" class="close" id="closeDialog" aria-label="បិទ">×</button>
+      <h2>កុម្ម៉ង់ទំនិញ</h2><p id="orderProductName"></p>
+      <input type="hidden" name="productId">
+      <label>ឈ្មោះអ្នកទិញ<input name="buyerName" required></label>
+      <label>លេខទូរស័ព្ទ ឬ Telegram<input name="buyerContact" required></label>
+      <label>ចំនួន<input name="quantity" type="number" min="1" max="99" value="1" required></label>
+      <button class="primary" type="submit">បញ្ជាក់ការកុម្ម៉ង់សាកល្បង</button>
+      <p class="form-note">មិនមានការទូទាត់ប្រាក់ពិតក្នុងកំណែសាកល្បងនេះទេ។</p>
+    </form>
+  </dialog>
+  <section class="seller-bot" aria-label="ជំនួយអ្នកលក់">
+    <button id="sellerBotToggle" class="seller-bot-toggle" type="button" aria-expanded="false" aria-controls="sellerBotPanel">
+      <span aria-hidden="true">💬</span> ជំនួយអ្នកលក់
+    </button>
+    <div id="sellerBotPanel" class="seller-bot-panel" hidden>
+      <div class="seller-bot-head">
+        <div><strong>SH Market Bot</strong><small>ជំនួយសម្រាប់អ្នកលក់</small></div>
+        <button id="sellerBotClose" type="button" aria-label="បិទ Bot">×</button>
+      </div>
+      <div id="sellerBotMessages" class="seller-bot-messages" aria-live="polite">
+        <div class="bot-message">សួស្តី! ខ្ញុំអាចជួយណែនាំពីការដាក់ទំនិញ ការកុម្ម៉ង់ និងកម្រៃជើងសារ។ តើអ្នកចង់ដឹងអ្វី?</div>
+      </div>
+      <div class="seller-bot-quick">
+        <button type="button" data-bot-question="តើដាក់ទំនិញយ៉ាងដូចម្តេច?">ដាក់ទំនិញ</button>
+        <button type="button" data-bot-question="តើកម្រៃជើងសារគណនាយ៉ាងដូចម្តេច?">កម្រៃជើងសារ</button>
+        <button type="button" data-bot-question="តើការកុម្ម៉ង់ដំណើរការយ៉ាងដូចម្តេច?">ការកុម្ម៉ង់</button>
+        <button type="button" data-bot-question="តើខ្ញុំត្រូវបង្កើតគណនីដើម្បីដាក់ទំនិញទេ?">គណនីអ្នកលក់</button>
+        <button type="button" data-bot-question="តើធ្វើដូចម្តេចដើម្បីពិនិត្យគុណភាពទំនិញ?">គុណភាពទំនិញ</button>
+      </div>
+      <form id="sellerBotForm" class="seller-bot-form">
+        <input id="sellerBotInput" aria-label="សរសេរសំណួរ" placeholder="សរសេរសំណួររបស់អ្នក..." autocomplete="off" required>
+        <button type="submit" aria-label="ផ្ញើសារ">➤</button>
+      </form>
+      <p class="bot-disclaimer">Bot ជំនួយកំណែសាកល្បង។ សូមកុំផ្ញើពាក្យសម្ងាត់ ឬព័ត៌មានធនាគារ។</p>
+    </div>
+  </section>
+  <div id="toast" role="status" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
